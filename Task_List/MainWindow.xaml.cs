@@ -43,7 +43,9 @@ namespace Task_List
                 using (StreamWriter sw = new StreamWriter(path, false, System.Text.Encoding.Default))
                 {
                     sw.WriteLine(TextOfTask.Text);
+
                 }
+                MessageBox.Show("Файл был успешно записан!");
             }
             catch (Exception ex)
             {
