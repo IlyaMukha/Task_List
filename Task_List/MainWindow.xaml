@@ -5,13 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Task_List"
         mc:Ignorable="d"
-        Title="Task List" Height="600" Width="800" ResizeMode="NoResize" Closed="Window_Closed">
+        Title="Task List" Height="600" Width="800" ResizeMode="NoResize" Closed="Window_Closed" Background="#BBDEFB">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="72*"></RowDefinition>
             <RowDefinition Height="72*"></RowDefinition>
             <RowDefinition Height="347*"></RowDefinition>
         </Grid.RowDefinitions>
+        <Label Grid.Row="0" Content="TO DO LIST" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="48" FontWeight="Bold" FontFamily="SimSun-ExtB"/>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="19*"></ColumnDefinition>
@@ -29,20 +30,21 @@
                         Margin="3"
                         Background="{x:Null}"
                         BorderBrush="#90CAF9"
-                        Cursor="Hand" Click="Submit_Click"/>
+                        Cursor="Hand" Click="Submit_Click" FontWeight="Bold" FontFamily="SimSun-ExtB" FontSize="24"/>
             </Border>
             <TextBox Grid.Column="0"
                      x:Name="TextOfTask"
                      Margin="10"
-                     FontSize="32"/>
+                     FontSize="32" FontFamily="SimSun-ExtB"/>
         </Grid>
-        <DataGrid Grid.Row="2" Name="tasksGrid" AutoGenerateColumns="False" Margin="10">
+        <DataGrid Grid.Row="2" Name="tasksGrid" AutoGenerateColumns="False" Margin="10" FontSize="14">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Width="5*" Binding="{Binding Id}" />
-                <DataGridTextColumn Header="Status" Width="10*" Binding="{Binding status}" />
-                <DataGridTextColumn Header="textOfTask" Width="85*" Binding ="{Binding textOfTask}"/>
+                <DataGridTextColumn Header="Date" Width="20*" Binding="{Binding date}" />
+                <DataGridTextColumn Header="textOfTask" Width="75*" Binding ="{Binding textOfTask}"/>
             </DataGrid.Columns>
         </DataGrid>
+
 
     </Grid>
 </Window>
